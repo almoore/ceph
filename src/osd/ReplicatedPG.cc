@@ -9462,7 +9462,6 @@ SnapSetContextRef ReplicatedPG::get_snapset_context(
   } else {
     ssc = snapset_contexts.lookup_or_create(
       oid.get_snapdir(), oid.get_snapdir());
-    ssc->exists = false;
     if (oid_existed) {
       int r = get_object_snapset(
 	oid,
