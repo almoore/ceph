@@ -1,3 +1,7 @@
+# prefer static libraries. ceph-test packages some tests, and we don't distribute
+# gtest/gmock shared libraries. so should link against .a if possible.
+AM_LDFLAGS += -static
+
 include test/erasure-code/Makefile.am
 include test/messenger/Makefile.am
 include test/compressor/Makefile.am
